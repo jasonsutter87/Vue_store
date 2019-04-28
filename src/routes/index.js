@@ -6,5 +6,5 @@ import aboutus from '@/components/aboutus'
 export default [
     {path: '/', component: pageone},
     {path: '/pageTwo', component: pagetwo},
-    {path: '/about_us', component: aboutus}
+    {path: '/about_me', component: aboutus}
 ]
