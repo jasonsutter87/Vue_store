@@ -3,14 +3,15 @@
     <div class="container-1600">
       <div class="row">
         <div class="col-12">
-            <h2 class="text-center">About Me</h2>
+            <h2 class="text-center">Store</h2>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-12 col-md-4 offset-md-1 col-lg-4 offset-lg-\0">
-          <div class="users-image-size ">
-            <div class="user-image">
-            </div>
+          <div class="gallery-image-size">
+            <div class="gallery-image"
+              :style="updateProduct()"
+            ></div>
           </div>
         </div>
         <div class="col-12 col-md-4 col-lg-4">
@@ -26,22 +27,58 @@
 </template>
 
 <script>
-   export default {}
+  export default {
+    data(){
+      return {
+         number: 0,
+         selectedProduct: this.$route.path.split('/')[2],
+         products: [
+           {
+               id: 1,
+               title: 'kdjhfkjhds',
+               image: 'https://picsum.photos/id/'+1+'/425/650',
+               url: '/#/store/'+ 1,
+               desription: 'jkhfkjsd'
+           },
+           {
+               id: 2,
+               title: 'kdjhfkjhds',
+               image: 'https://picsum.photos/id/'+2+'/425/650',
+               url: '/#/store/'+ 2,
+               desription: 'jkhfkjsd'
+           },
+           {
+               id: 3,
+               title: 'kdjhfkjhds',
+               image: 'https://picsum.photos/id/'+3+'/425/650',
+               url: '/#/store/'+ 3,
+               desription: 'jkhfkjsd'
+           }
+         ]
+      }
+    },
+    methods: {
+       updateProduct: function() {
+         return 'background-image: url('+this.products[this.selectedProduct -1 ].image+')'
+       }
+   }
+  }
 </script>
 
 <style scoped>
 
-  .users-image-size{
+
+  .gallery-image-size{
     margin: 0 auto;
     width: 100%;
   }
-  .user-image{
-    background-image: url('https://c.pxhere.com/photos/8f/87/beach_camera_man_photographer_sea_seashore_taking_photo_water-1364684.jpg!d');
-    padding-bottom: 100%;
+  .gallery-image{
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-  }
+    padding-bottom: 100%;
+    width: 100%;
+    margin-top: 1.5rem;
+    }
 
 </style>
