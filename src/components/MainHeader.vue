@@ -14,7 +14,7 @@
         <div v-for="link in links"
              class="col-2">
              <p class="text-center">
-               <a :href="link.linkAnchor">{{ link.linkText }}</a>
+               <a :href="link.linkAnchor" class="header-link">{{ link.linkText }}</a>
              </p>
         </div>
       </div>
@@ -37,8 +37,8 @@
           linkAnchor: '/#/pageTwo'
         },
         {
-          linkText: 'about us',
-          linkAnchor: '/#/about_us'
+          linkText: 'about me',
+          linkAnchor: '/#/about_me'
         }
         ]
       }
@@ -58,5 +58,16 @@
     line-height: .5;
     font-weight: 300;
     text-transform: uppercase;
+  }
+  .header-link{
+    text-transform: uppercase;
+    color: #000;
+    font-size: 1.2rem;
+  }
+
+  .header-link:hover{
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
   }
 </style>

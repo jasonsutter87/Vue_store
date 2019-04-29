@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <MainHeader firstname="jason"></MainHeader>
-    <img alt="Vue logo" src="./assets/logo.png">
     <router-view></router-view>
   </div>
 </template>
@@ -25,5 +24,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container-1600 {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+    position: relative;
+    max-width: 1600px;
+    width: 100%;
 }
 </style>
