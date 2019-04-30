@@ -7,12 +7,12 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-12 col-md-4 offset-md-1 col-lg-4 offset-lg-0" v-for="product in products">
+        <div class="col-12 col-sm-5 col-md-4 offset-md-1 col-lg-4 offset-lg-0" v-for="product in products">
           <a :href="product.url">
             <div class="gallery-image-size">
               <div class="gallery-image"
                 :style=updateProduct(product.image)>
-            </div>
+              </div>
             </div>
           </a>
         </div>
@@ -41,11 +41,18 @@
 </script>
 
 <style scoped>
+  .activeProduct{
+    background: green;
+  }
 
 .gallery-image-size{
   margin: 0 auto;
   width: 100%;
+  position: relative;
 }
+
+
+
 .gallery-image{
   background-size: cover;
   background-position: center;
@@ -53,6 +60,8 @@
   padding-bottom: 100%;
   width: 100%;
   margin-top: 1.5rem;
+
   }
+
 
 </style>
