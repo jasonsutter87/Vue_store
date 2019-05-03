@@ -14,7 +14,7 @@
               ></div>
             </div>
           </div>
-          <div class="col-12 col-md-4 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4 d-flex flex-column">
             <h3 class="mt-4">{{ this.products[this.selectedProduct -1 ].title }}</h3>
             <p>Price: ${{ this.products[this.selectedProduct -1 ].price }}</p>
             <p v-if="this.products[this.selectedProduct -1 ].sale " >On Sale!</p>
@@ -24,7 +24,7 @@
               type="button"
               name="button"
               @click="addToCart(selectedProduct)"
-              class="btn btn-block btn-outline-success">
+              class="btn btn-block btn-outline-success mt-auto">
               Buy Now
             </button>
           </div>
@@ -50,8 +50,6 @@
          return 'background-image: url('+this.products[this.selectedProduct -1 ].image+')'
        },
        addToCart: function(item) {
-         console.log(item)
-         console.log(this.products[this.selectedProduct -1 ])
          this.$emit('add-to-cart', this.products[this.selectedProduct -1 ] )
        },
    },
