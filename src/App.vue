@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <div class="shopping-cart-bubble">
+    <a href="/#/checkout" class="shopping-cart-bubble">
       <p><i class="fas fa-shopping-cart"></i> {{ cart.length }}</p>
-    </div>
+    </a>
     <MainHeader></MainHeader>
-    <router-view @add-to-cart="updateCart"></router-view>
+    <router-view @add-to-cart="updateCart" :cart="cart"></router-view>
   </div>
 </template>
 
 <script>
 import MainHeader from './components/MainHeader.vue'
-
 
 export default {
   name: 'app',
@@ -20,12 +19,14 @@ export default {
   data(){
     return {
       cart: []
-
     }
   },
   methods: {
     updateCart(item) {
       this.cart.push(item)
+    },
+    getCart() {
+      return this.cart
     }
   }
 }
@@ -57,12 +58,18 @@ export default {
   padding: .25rem;
 }
 
+.ul-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 .container-1600 {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: auto;
-    position: relative;
-    max-width: 1600px;
-    width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  position: relative;
+  max-width: 1600px;
+  width: 100%;
 }
 </style>

@@ -43,6 +43,10 @@
         {
           linkText: 'about me',
           linkAnchor: '/#/about_me'
+        },
+        {
+          linkText: 'checkout',
+          linkAnchor: '/#/checkout'
         }
         ]
       }
